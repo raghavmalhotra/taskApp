@@ -4,7 +4,9 @@ import { AddTask } from './components/AddTask'
 import { ShowTask } from './components/ShowTask'
 import './App.css'
 function App() {
-  const [taskList, setTasklist] = useState([])
+  const [taskList, setTasklist] = useState(
+    JSON.parse(localStorage.getItem('tasklist')) || []
+  )
   const [task, setTask] = useState({})
   return (
     <div className='jb'>
